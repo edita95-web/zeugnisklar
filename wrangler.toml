@@ -10,12 +10,12 @@ run_worker_first = ["/api/*"]
 
 [vars]
 # Polar: organization ID from Polar -> Settings -> General (not secret)
-POLAR_ORGANIZATION_ID = ""
+POLAR_ORGANIZATION_ID = "840f64d5-f9eb-45db-a0ce-6d2d587a3d32"
 # "true" while testing with sandbox.polar.sh, "false" for real sales
 POLAR_SANDBOX = "false"
 # Checkout links from Polar -> Products -> (product) -> Share / Checkout link
-CHECKOUT_URL_SINGLE = ""
-CHECKOUT_URL_FAMILY = ""
+CHECKOUT_URL_SINGLE = "https://buy.polar.sh/polar_cl_Y5Y48DKRDxrWf5yZNTrT767J07XqYlfXmpVUx2asVGN"
+CHECKOUT_URL_FAMILY = "https://buy.polar.sh/polar_cl_uQ9zxx2hkd1DJvlpj989NruJTgtQ9RcqxTJM92Jte5q"
 # "off" disables the license check (only for testing!)
 PAYMENTS = "polar"
 # Claude model and effort. Defaults are fine.
