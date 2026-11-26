@@ -1,0 +1,100 @@
+{
+ "is_arbeitszeugnis": true,
+ "country": "DE",
+ "zeugnis_type": "qualifiziert",
+ "overall_grade": "3",
+ "overall_grade_label": "Note 3 (befriedigend)",
+ "summary": "Ihr Zeugnis klingt auf den ersten Blick freundlich, ist in der Zeugnissprache aber eine durchschnittliche Note 3. Im wichtigsten Satz fehlt das Wort „stets“, deshalb ist es keine 2. Beim Verhalten stehen die Kollegen vor den Vorgesetzten, das lesen Personaler als kleines Minus. Im Schlusssatz fehlt das Bedauern über Ihr Ausscheiden. Die gute Nachricht: Das lässt sich oft mit einem höflichen Brief korrigieren.",
+ "performance_grade": "3",
+ "behavior_grade": "3",
+ "phrases": [
+  {
+   "quote_de": "Sie erledigte die ihr übertragenen Aufgaben zu unserer vollen Zufriedenheit.",
+   "meaning": "Das ist der wichtigste Satz im Zeugnis. Ohne „stets“ bedeutet er Note 3, also Durchschnitt. Für eine 2 müsste dort „stets zu unserer vollen Zufriedenheit“ stehen.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Ihr Verhalten gegenüber Kollegen und Vorgesetzten war einwandfrei.",
+   "meaning": "„Einwandfrei“ entspricht einer 3. Die Kollegen stehen vor den Vorgesetzten, üblich ist es umgekehrt. Das kann auf Spannungen mit der Führung hindeuten.",
+   "grade": "3",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Frau Mustermann verfügt über ein solides Fachwissen.",
+   "meaning": "„Solides“ Fachwissen heißt durchschnittlich. Für eine gute Note stünde dort „umfassendes“ oder „fundiertes“.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Sie war stets pünktlich und trug zu einem guten Betriebsklima bei.",
+   "meaning": "Pünktlichkeit ist selbstverständlich, sie extra zu loben ist ein schwaches Lob. „Zum Betriebsklima beigetragen“ wird manchmal so gelesen, dass die Person mehr geredet als gearbeitet hat.",
+   "grade": "-",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Wir danken ihr für die Mitarbeit und wünschen ihr für die Zukunft alles Gute.",
+   "meaning": "Dank und gute Wünsche sind da, aber das „Bedauern“ fehlt. Bei einer guten Note steht es meistens dabei.",
+   "grade": "3",
+   "tone": "neutral"
+  }
+ ],
+ "red_flags": [
+  {
+   "issue": "Im wichtigsten Satz fehlt „stets“",
+   "explanation": "Das ist der Unterschied zwischen Note 2 und 3 und der wichtigste Punkt für die Korrektur."
+  },
+  {
+   "issue": "Falsche Reihenfolge: Kollegen vor Vorgesetzten",
+   "explanation": "Erfahrene Personaler bemerken das. Bitten Sie um „Vorgesetzten, Kollegen und Kunden“."
+  },
+  {
+   "issue": "Schlusssatz ohne Bedauern",
+   "explanation": "Der Satz „Wir bedauern ihr Ausscheiden sehr“ fehlt. Ein Anspruch darauf besteht nicht, viele Arbeitgeber ergänzen ihn aber auf höfliche Bitte."
+  }
+ ],
+ "completeness": [
+  {
+   "element": "Briefkopf der Firma",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Beschäftigungszeitraum",
+   "present": true,
+   "note": "01.03.2021 – 31.10.2026"
+  },
+  {
+   "element": "Aufgabenbeschreibung",
+   "present": true,
+   "note": "Gut und ausführlich beschrieben."
+  },
+  {
+   "element": "Leistungsbeurteilung",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Verhaltensbeurteilung",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Datum und Unterschrift",
+   "present": true,
+   "note": "Prüfen Sie, ob die Unterschrift original ist und nicht eingescannt."
+  }
+ ],
+ "closing_formula": {
+  "thanks": true,
+  "regret": false,
+  "future_wishes": true,
+  "comment": "Dank und Wünsche sind vorhanden, das Bedauern fehlt."
+ },
+ "next_steps": [
+  "Schicken Sie Ihrem Arbeitgeber einen höflichen Brief mit der Bitte um Berichtigung (Entwurf unten).",
+  "Tun Sie das bald. Arbeits- oder Tarifverträge können Fristen haben (Ausschlussfristen).",
+  "Wenn der Arbeitgeber ablehnt, wenden Sie sich an Gewerkschaft, Migrationsberatung oder Fachanwalt für Arbeitsrecht."
+ ],
+ "correction_letter_de": "[Ihr Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Firma]\n[z. Hd. Personalabteilung]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Ort], [Datum]\n\nBitte um Berichtigung meines Arbeitszeugnisses vom [Datum]\n\nSehr geehrte Damen und Herren,\n\nvielen Dank für das Arbeitszeugnis. Ich habe mich über die ausführliche Beschreibung meiner Aufgaben sehr gefreut. Ich bitte Sie freundlich, folgende Formulierungen zu prüfen und anzupassen:\n\n1. Statt „zu unserer vollen Zufriedenheit“: „stets zu unserer vollen Zufriedenheit“.\n2. Statt „gegenüber Kollegen und Vorgesetzten war einwandfrei“: „gegenüber Vorgesetzten, Kollegen und Kunden war stets vorbildlich“.\n3. Statt „ein solides Fachwissen“: „ein fundiertes Fachwissen“.\n4. Ergänzung der Schlussformel: „Wir bedauern ihr Ausscheiden sehr, danken ihr für die stets gute Zusammenarbeit und wünschen ihr für ihre berufliche und private Zukunft alles Gute und weiterhin viel Erfolg.“\n\nIch bitte Sie, mir das berichtigte Zeugnis bis zum [Datum, ca. 2 Wochen] zuzusenden. Für Rückfragen stehe ich gern zur Verfügung.\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Ihr Vorname Nachname]"
+}

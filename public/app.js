@@ -119,14 +119,20 @@
     if (pr) pr.addEventListener("click", function () { window.print(); });
   }
 
-  var sample = null;
+  // The example result follows the page language (one file per UI language).
+  var samples = {};
   function renderSample() {
-    var el = $("#sampleReport");
-    if (!sample) return;
-    el.innerHTML = renderReport(sample, "bs");
-    bindReportActions(el, sample, "bs");
+    var lang = uiLang, el = $("#sampleReport");
+    if (samples[lang]) {
+      el.innerHTML = renderReport(samples[lang], lang);
+      bindReportActions(el, samples[lang], lang);
+      return;
+    }
+    fetch("/sample-report." + lang + ".json").then(function (r) { return r.json(); }).then(function (j) {
+      samples[lang] = j;
+      if (uiLang === lang) renderSample();
+    }).catch(function () {});
   }
-  fetch("/sample-report.json").then(function (r) { return r.json(); }).then(function (j) { sample = j; renderSample(); }).catch(function () {});
 
   // ---------- config / checkout ----------
   var config = { checkoutSingle: "", checkoutFamily: "", paymentsEnabled: true };

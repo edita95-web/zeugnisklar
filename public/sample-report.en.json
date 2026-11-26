@@ -1,0 +1,100 @@
+{
+ "is_arbeitszeugnis": true,
+ "country": "DE",
+ "zeugnis_type": "qualifiziert",
+ "overall_grade": "3",
+ "overall_grade_label": "Grade 3 (satisfactory)",
+ "summary": "At first glance your reference sounds friendly, but in German reference-letter language it is an average grade 3. The key sentence is missing the word “stets” (always), so it is not a 2. In the conduct section, colleagues are named before supervisors, which HR reads as a small minus. The closing sentence does not express regret that you are leaving. The good news: this can often be fixed with one polite letter.",
+ "performance_grade": "3",
+ "behavior_grade": "3",
+ "phrases": [
+  {
+   "quote_de": "Sie erledigte die ihr übertragenen Aufgaben zu unserer vollen Zufriedenheit.",
+   "meaning": "This is the most important sentence in the letter. Without “stets” it means grade 3, i.e. average. A grade 2 would read “stets zu unserer vollen Zufriedenheit”.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Ihr Verhalten gegenüber Kollegen und Vorgesetzten war einwandfrei.",
+   "meaning": "“Einwandfrei” (flawless) is a grade 3. Colleagues are named before supervisors; normally it is the other way round. This can hint at tension with management.",
+   "grade": "3",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Frau Mustermann verfügt über ein solides Fachwissen.",
+   "meaning": "“Solid” expertise means average. A good grade would say “comprehensive” (umfassendes) or “well-founded” (fundiertes).",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Sie war stets pünktlich und trug zu einem guten Betriebsklima bei.",
+   "meaning": "Being punctual is expected, so praising it separately is weak praise. “Contributed to a good working atmosphere” is sometimes read as talking more than working.",
+   "grade": "-",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Wir danken ihr für die Mitarbeit und wünschen ihr für die Zukunft alles Gute.",
+   "meaning": "Thanks and good wishes are there, but “regret” (bedauern) is missing. With a good grade it is usually included.",
+   "grade": "3",
+   "tone": "neutral"
+  }
+ ],
+ "red_flags": [
+  {
+   "issue": "“stets” is missing from the main rating",
+   "explanation": "This is the difference between grade 2 and 3 and the most important point to correct."
+  },
+  {
+   "issue": "Wrong order: colleagues before supervisors",
+   "explanation": "Experienced HR readers notice this. Ask for “Vorgesetzten, Kollegen und Kunden”."
+  },
+  {
+   "issue": "Closing sentence without regret",
+   "explanation": "The sentence “Wir bedauern ihr Ausscheiden sehr” is missing. There is no legal right to it, but employers often add it when asked politely."
+  }
+ ],
+ "completeness": [
+  {
+   "element": "Company letterhead",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Period of employment",
+   "present": true,
+   "note": "01.03.2021 – 31.10.2026"
+  },
+  {
+   "element": "Description of duties",
+   "present": true,
+   "note": "Well and thoroughly described."
+  },
+  {
+   "element": "Performance rating",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Conduct rating",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Date and signature",
+   "present": true,
+   "note": "Check that the signature is original, not scanned."
+  }
+ ],
+ "closing_formula": {
+  "thanks": true,
+  "regret": false,
+  "future_wishes": true,
+  "comment": "Thanks and wishes are there, regret is missing."
+ },
+ "next_steps": [
+  "Send your employer a polite letter asking for a correction (draft below, in German).",
+  "Do it soon. Employment or collective agreements may have deadlines (Ausschlussfristen).",
+  "If the employer refuses, contact a union, a migrant advice centre or an employment lawyer."
+ ],
+ "correction_letter_de": "[Ihr Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Firma]\n[z. Hd. Personalabteilung]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Ort], [Datum]\n\nBitte um Berichtigung meines Arbeitszeugnisses vom [Datum]\n\nSehr geehrte Damen und Herren,\n\nvielen Dank für das Arbeitszeugnis. Ich habe mich über die ausführliche Beschreibung meiner Aufgaben sehr gefreut. Ich bitte Sie freundlich, folgende Formulierungen zu prüfen und anzupassen:\n\n1. Statt „zu unserer vollen Zufriedenheit“: „stets zu unserer vollen Zufriedenheit“.\n2. Statt „gegenüber Kollegen und Vorgesetzten war einwandfrei“: „gegenüber Vorgesetzten, Kollegen und Kunden war stets vorbildlich“.\n3. Statt „ein solides Fachwissen“: „ein fundiertes Fachwissen“.\n4. Ergänzung der Schlussformel: „Wir bedauern ihr Ausscheiden sehr, danken ihr für die stets gute Zusammenarbeit und wünschen ihr für ihre berufliche und private Zukunft alles Gute und weiterhin viel Erfolg.“\n\nIch bitte Sie, mir das berichtigte Zeugnis bis zum [Datum, ca. 2 Wochen] zuzusenden. Für Rückfragen stehe ich gern zur Verfügung.\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Ihr Vorname Nachname]"
+}

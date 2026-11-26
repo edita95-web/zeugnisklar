@@ -1,0 +1,100 @@
+{
+ "is_arbeitszeugnis": true,
+ "country": "DE",
+ "zeugnis_type": "qualifiziert",
+ "overall_grade": "3",
+ "overall_grade_label": "Not 3 (orta)",
+ "summary": "Belgeniz ilk bakışta güzel görünüyor, ancak Alman iş belgesi dilinde bu ortalama bir 3 notudur. En önemli cümlede „stets“ (her zaman) kelimesi eksik, bu yüzden 2 değil. Davranış bölümünde meslektaşlar amirlerden önce yazılmış; İK bunu küçük bir eksi olarak okur. Kapanış cümlesinde ayrılmanıza duyulan üzüntü yok. İyi haber: bu çoğu zaman kibar bir mektupla düzeltilebilir.",
+ "performance_grade": "3",
+ "behavior_grade": "3",
+ "phrases": [
+  {
+   "quote_de": "Sie erledigte die ihr übertragenen Aufgaben zu unserer vollen Zufriedenheit.",
+   "meaning": "Bu, belgenin en önemli cümlesidir. „stets“ olmadan 3 notu, yani ortalama demektir. 2 notu için „stets zu unserer vollen Zufriedenheit“ yazması gerekir.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Ihr Verhalten gegenüber Kollegen und Vorgesetzten war einwandfrei.",
+   "meaning": "„Einwandfrei“ (kusursuz) 3 notudur. Meslektaşlar amirlerden önce yazılmış; normalde tersidir. Bu, yönetimle gerginlik olduğuna işaret edebilir.",
+   "grade": "3",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Frau Mustermann verfügt über ein solides Fachwissen.",
+   "meaning": "„Solid“ (sağlam) bilgi ortalama demektir. İyi bir not için „umfassendes“ veya „fundiertes“ yazardı.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Sie war stets pünktlich und trug zu einem guten Betriebsklima bei.",
+   "meaning": "Dakiklik zaten beklenir, bunu ayrıca övmek zayıf bir övgüdür. „İyi çalışma ortamına katkıda bulundu“ bazen kişinin çalışmaktan çok konuştuğu şeklinde okunur.",
+   "grade": "-",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Wir danken ihr für die Mitarbeit und wünschen ihr für die Zukunft alles Gute.",
+   "meaning": "Teşekkür ve iyi dilekler var ama „bedauern“ (üzüntü) eksik. İyi bir notta genellikle yazılır.",
+   "grade": "3",
+   "tone": "neutral"
+  }
+ ],
+ "red_flags": [
+  {
+   "issue": "Ana değerlendirmede „stets“ eksik",
+   "explanation": "2 ile 3 arasındaki fark budur ve düzeltilmesi gereken en önemli noktadır."
+  },
+  {
+   "issue": "Yanlış sıralama: meslektaşlar amirlerden önce",
+   "explanation": "Deneyimli İK çalışanları bunu fark eder. „Vorgesetzten, Kollegen und Kunden“ sırasını isteyin."
+  },
+  {
+   "issue": "Kapanış cümlesinde üzüntü yok",
+   "explanation": "„Wir bedauern ihr Ausscheiden sehr“ cümlesi eksik. Buna yasal bir hak yok, ama işverenler kibarca istendiğinde genellikle ekler."
+  }
+ ],
+ "completeness": [
+  {
+   "element": "Şirket antetli kâğıdı",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Çalışma süresi",
+   "present": true,
+   "note": "01.03.2021 – 31.10.2026"
+  },
+  {
+   "element": "Görev tanımı",
+   "present": true,
+   "note": "İyi ve ayrıntılı anlatılmış."
+  },
+  {
+   "element": "Performans değerlendirmesi",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Davranış değerlendirmesi",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "Tarih ve imza",
+   "present": true,
+   "note": "İmzanın taranmış değil, orijinal olduğunu kontrol edin."
+  }
+ ],
+ "closing_formula": {
+  "thanks": true,
+  "regret": false,
+  "future_wishes": true,
+  "comment": "Teşekkür ve dilekler var, üzüntü eksik."
+ },
+ "next_steps": [
+  "İşvereninize kibar bir düzeltme mektubu gönderin (taslak aşağıda, Almanca).",
+  "Bunu hızlı yapın. İş veya toplu sözleşmelerde süreler olabilir (Ausschlussfristen).",
+  "İşveren reddederse sendikaya, göçmen danışma merkezine veya iş hukuku avukatına başvurun."
+ ],
+ "correction_letter_de": "[Ihr Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Firma]\n[z. Hd. Personalabteilung]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Ort], [Datum]\n\nBitte um Berichtigung meines Arbeitszeugnisses vom [Datum]\n\nSehr geehrte Damen und Herren,\n\nvielen Dank für das Arbeitszeugnis. Ich habe mich über die ausführliche Beschreibung meiner Aufgaben sehr gefreut. Ich bitte Sie freundlich, folgende Formulierungen zu prüfen und anzupassen:\n\n1. Statt „zu unserer vollen Zufriedenheit“: „stets zu unserer vollen Zufriedenheit“.\n2. Statt „gegenüber Kollegen und Vorgesetzten war einwandfrei“: „gegenüber Vorgesetzten, Kollegen und Kunden war stets vorbildlich“.\n3. Statt „ein solides Fachwissen“: „ein fundiertes Fachwissen“.\n4. Ergänzung der Schlussformel: „Wir bedauern ihr Ausscheiden sehr, danken ihr für die stets gute Zusammenarbeit und wünschen ihr für ihre berufliche und private Zukunft alles Gute und weiterhin viel Erfolg.“\n\nIch bitte Sie, mir das berichtigte Zeugnis bis zum [Datum, ca. 2 Wochen] zuzusenden. Für Rückfragen stehe ich gern zur Verfügung.\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Ihr Vorname Nachname]"
+}

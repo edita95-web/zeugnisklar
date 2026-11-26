@@ -1,0 +1,100 @@
+{
+ "is_arbeitszeugnis": true,
+ "country": "DE",
+ "zeugnis_type": "qualifiziert",
+ "overall_grade": "3",
+ "overall_grade_label": "درجة 3 (مقبول)",
+ "summary": "تبدو شهادتك للوهلة الأولى جيدة، لكنها في لغة شهادات العمل الألمانية درجة 3 متوسطة. كلمة „stets“ (دائماً) غير موجودة في الجملة الأهم، ولذلك ليست درجة 2. في قسم السلوك ذُكر الزملاء قبل الرؤساء، وهذا يقرؤه موظفو الموارد البشرية كنقطة سلبية صغيرة. الجملة الختامية لا تعبّر عن الأسف لمغادرتك. الخبر الجيد: يمكن غالباً تصحيح ذلك برسالة مهذبة واحدة.",
+ "performance_grade": "3",
+ "behavior_grade": "3",
+ "phrases": [
+  {
+   "quote_de": "Sie erledigte die ihr übertragenen Aufgaben zu unserer vollen Zufriedenheit.",
+   "meaning": "هذه أهم جملة في الشهادة. بدون „stets“ تعني درجة 3، أي متوسط. للحصول على درجة 2 يجب أن تكون „stets zu unserer vollen Zufriedenheit“.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Ihr Verhalten gegenüber Kollegen und Vorgesetzten war einwandfrei.",
+   "meaning": "„Einwandfrei“ (بلا عيب) تعني درجة 3. ذُكر الزملاء قبل الرؤساء، والمعتاد هو العكس. قد يشير ذلك إلى توتر مع الإدارة.",
+   "grade": "3",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Frau Mustermann verfügt über ein solides Fachwissen.",
+   "meaning": "المعرفة „الصلبة“ (solides) تعني متوسطة. للدرجة الجيدة تُكتب „umfassendes“ أو „fundiertes“.",
+   "grade": "3",
+   "tone": "neutral"
+  },
+  {
+   "quote_de": "Sie war stets pünktlich und trug zu einem guten Betriebsklima bei.",
+   "meaning": "الالتزام بالمواعيد أمر متوقع، ومدحه بشكل منفصل مدح ضعيف. عبارة „ساهمت في جو عمل جيد“ تُفهم أحياناً بأن الشخص كان يتكلم أكثر مما يعمل.",
+   "grade": "-",
+   "tone": "versteckt_negativ"
+  },
+  {
+   "quote_de": "Wir danken ihr für die Mitarbeit und wünschen ihr für die Zukunft alles Gute.",
+   "meaning": "الشكر والتمنيات موجودة، لكن „الأسف“ (bedauern) غير موجود. عادةً يُكتب في الشهادات الجيدة.",
+   "grade": "3",
+   "tone": "neutral"
+  }
+ ],
+ "red_flags": [
+  {
+   "issue": "كلمة „stets“ غير موجودة في التقييم الرئيسي",
+   "explanation": "هذا هو الفرق بين درجة 2 و3، وهو أهم نقطة للتصحيح."
+  },
+  {
+   "issue": "ترتيب خاطئ: الزملاء قبل الرؤساء",
+   "explanation": "يلاحظ موظفو الموارد البشرية ذوو الخبرة ذلك. اطلب الترتيب „Vorgesetzten, Kollegen und Kunden“."
+  },
+  {
+   "issue": "جملة ختامية بدون أسف",
+   "explanation": "جملة „Wir bedauern ihr Ausscheiden sehr“ غير موجودة. لا يوجد حق قانوني فيها، لكن أصحاب العمل يضيفونها غالباً عند الطلب بلطف."
+  }
+ ],
+ "completeness": [
+  {
+   "element": "ترويسة الشركة",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "فترة العمل",
+   "present": true,
+   "note": "01.03.2021 – 31.10.2026"
+  },
+  {
+   "element": "وصف المهام",
+   "present": true,
+   "note": "موصوفة بشكل جيد ومفصل."
+  },
+  {
+   "element": "تقييم الأداء",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "تقييم السلوك",
+   "present": true,
+   "note": ""
+  },
+  {
+   "element": "التاريخ والتوقيع",
+   "present": true,
+   "note": "تأكد أن التوقيع أصلي وليس ممسوحاً ضوئياً."
+  }
+ ],
+ "closing_formula": {
+  "thanks": true,
+  "regret": false,
+  "future_wishes": true,
+  "comment": "الشكر والتمنيات موجودة، والأسف غير موجود."
+ },
+ "next_steps": [
+  "أرسل إلى صاحب العمل رسالة مهذبة تطلب فيها التصحيح (المسودة أدناه بالألمانية).",
+  "افعل ذلك بسرعة. قد تحتوي عقود العمل أو الاتفاقيات الجماعية على مهل (Ausschlussfristen).",
+  "إذا رفض صاحب العمل، توجه إلى النقابة أو مركز استشارات المهاجرين أو محامٍ مختص بقانون العمل."
+ ],
+ "correction_letter_de": "[Ihr Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Firma]\n[z. Hd. Personalabteilung]\n[Straße Hausnummer]\n[PLZ Ort]\n\n[Ort], [Datum]\n\nBitte um Berichtigung meines Arbeitszeugnisses vom [Datum]\n\nSehr geehrte Damen und Herren,\n\nvielen Dank für das Arbeitszeugnis. Ich habe mich über die ausführliche Beschreibung meiner Aufgaben sehr gefreut. Ich bitte Sie freundlich, folgende Formulierungen zu prüfen und anzupassen:\n\n1. Statt „zu unserer vollen Zufriedenheit“: „stets zu unserer vollen Zufriedenheit“.\n2. Statt „gegenüber Kollegen und Vorgesetzten war einwandfrei“: „gegenüber Vorgesetzten, Kollegen und Kunden war stets vorbildlich“.\n3. Statt „ein solides Fachwissen“: „ein fundiertes Fachwissen“.\n4. Ergänzung der Schlussformel: „Wir bedauern ihr Ausscheiden sehr, danken ihr für die stets gute Zusammenarbeit und wünschen ihr für ihre berufliche und private Zukunft alles Gute und weiterhin viel Erfolg.“\n\nIch bitte Sie, mir das berichtigte Zeugnis bis zum [Datum, ca. 2 Wochen] zuzusenden. Für Rückfragen stehe ich gern zur Verfügung.\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Ihr Vorname Nachname]"
+}
