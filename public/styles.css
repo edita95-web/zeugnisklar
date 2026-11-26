@@ -83,7 +83,7 @@ textarea{resize:vertical}
 .spinner{width:34px;height:34px;flex:none;border-radius:50%;border:4px solid var(--brand-soft);border-top-color:var(--brand);animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-.prices{display:grid;grid-template-columns:repeat(2,minmax(0,340px));gap:20px;justify-content:center;margin:20px 0}
+.prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,320px));gap:20px;justify-content:center;margin:20px 0}
 @media (max-width:700px){.prices{grid-template-columns:1fr}}
 .price{position:relative;display:grid;gap:8px}
 .price.featured{border:2px solid var(--brand)}
@@ -100,7 +100,8 @@ details p{color:var(--muted);margin:.6em 0 0}
 .foot nav{display:flex;gap:16px;flex-wrap:wrap}
 
 /* report */
-.report{display:grid;gap:16px;margin-top:18px}
+.report{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:18px}
+.report .card{min-width:0;overflow-wrap:break-word}
 .r-head{display:flex;gap:18px;align-items:center}
 .grade{display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 8px;border-radius:10px;font-weight:800;background:var(--bg-alt)}
 .grade.big{min-width:72px;height:72px;font-size:2.2rem;border-radius:18px}
@@ -128,13 +129,28 @@ details p{color:var(--muted);margin:.6em 0 0}
 .disclaimer{font-size:.85rem;color:var(--muted)}
 [dir=rtl] .phrase q,[dir=rtl] .letter{direction:ltr;text-align:left}
 
+/* portal home */
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.tool{display:grid;gap:8px;align-content:start;text-decoration:none;color:var(--ink)}
+a.tool:hover{border-color:var(--brand)}
+.tool .ico{font-size:1.8rem}
+.tool p{color:var(--muted);margin:0}
+.tool .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-weight:700}
+.tool.soon{opacity:.7}
+.pill{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--bg-alt);color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:760px){.why{grid-template-columns:1fr}}
+.why p{color:var(--muted);margin:0}
+.expert{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+@media (max-width:760px){.expert{grid-template-columns:1fr}}
+
 /* legal + ratgeber pages */
 .doc{max-width:760px;margin:0 auto;padding:40px 16px 60px}
 .doc h1{font-size:2rem}
 .doc .todo{background:var(--mark);padding:0 4px;border-radius:3px}
 
 @media print{
-  .top,.hero,#so-gehts,#beispiel,#preise,#faq,.foot,#checkForm,.r-actions{display:none!important}
+  .top,.hero,#so-gehts,#beispiel,#preise,#faq,#experte,.foot,#checkForm,.r-actions{display:none!important}
   body{background:#fff;color:#000}
   .card{box-shadow:none;border-color:#ccc}
 }

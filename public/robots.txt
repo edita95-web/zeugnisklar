@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://zeugnisklar.com/sitemap.xml
+Sitemap: https://zeugnisklar.editatahtovic95.workers.dev/sitemap.xml

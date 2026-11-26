@@ -3,31 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZeugnisKlar – Arbeitszeugnis prüfen in Ihrer Muttersprache</title>
-<meta name="description" content="Arbeitszeugnis online prüfen: Geheimcode entschlüsselt, Note erkannt, Erklärung auf Bosnisch, Türkisch, Arabisch und 12 weiteren Sprachen. Mit fertigem Korrekturbrief. Ergebnis in ca. 1 Minute.">
-<link rel="canonical" href="https://zeugnisklar.com/">
-<meta property="og:title" content="ZeugnisKlar – Ihr Arbeitszeugnis, verständlich erklärt">
-<meta property="og:description" content="Was steht wirklich in Ihrem Arbeitszeugnis? Erklärung in Ihrer Muttersprache + Korrekturbrief auf Deutsch.">
+<title>PapierKlar – Deutsche Dokumente in Ihrer Muttersprache erklärt</title>
+<meta name="description" content="Arbeitszeugnis oder Brief vom Amt nicht verstanden? PapierKlar erklärt deutsche Dokumente auf Bosnisch, Türkisch, Arabisch und 12 weiteren Sprachen, mit Fristen und fertigem Antwortschreiben auf Deutsch.">
+<link rel="canonical" href="https://zeugnisklar.editatahtovic95.workers.dev/">
+<meta property="og:title" content="PapierKlar – Deutsche Papiere, endlich verständlich">
+<meta property="og:description" content="Arbeitszeugnis, Jobcenter, Finanzamt, Ausländerbehörde: Erklärung in Ihrer Muttersprache und Antwort auf Deutsch.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 17l5 5 9-11' stroke='white' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Was bedeutet „zu unserer vollen Zufriedenheit“?","acceptedAnswer":{"@type":"Answer","text":"Ohne das Wort „stets“ entspricht diese Formulierung meist der Note 3 (befriedigend). „Stets zu unserer vollen Zufriedenheit“ ist eine Note 2."}},
-{"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Ihr Zeugnis wird nur für die Analyse verarbeitet und danach nicht gespeichert."}},
-{"@type":"Question","name":"Ist das eine Rechtsberatung?","acceptedAnswer":{"@type":"Answer","text":"Nein. ZeugnisKlar erklärt allgemein übliche Zeugnisformulierungen. Bei Streit oder Fristen wenden Sie sich an Gewerkschaft, Beratungsstelle oder Fachanwalt."}}
-]}
+<script>
+  // Old links (e.g. Polar success page) point to /#pruefen: send them to the reference-letter tool.
+  if (location.hash === "#pruefen" || location.search.indexOf("key=") > -1) {
+    location.replace("/zeugnis/" + location.search + "#pruefen");
+  }
 </script>
 </head>
-<body>
+<body data-tool="home">
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo" href="/"><span class="logo-mark">✓</span> ZeugnisKlar</a>
+    <a class="logo" href="/"><span class="logo-mark">✓</span> PapierKlar</a>
     <nav class="nav">
-      <a href="#so-gehts" data-i18n="nav_how">So funktioniert's</a>
-      <a href="#beispiel" data-i18n="nav_sample">Beispiel</a>
-      <a href="#preise" data-i18n="nav_pricing">Preise</a>
-      <a href="#faq">FAQ</a>
+      <a href="/zeugnis/" data-i18n="nav_zeugnis">Arbeitszeugnis</a>
+      <a href="/brief/" data-i18n="nav_brief">Behördenbrief</a>
+      <a href="/ratgeber/">Ratgeber</a>
     </nav>
     <select id="uiLang" aria-label="Sprache / Jezik / Dil">
       <option value="de">Deutsch</option>
@@ -43,12 +41,11 @@
 <section class="hero">
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow" data-i18n="hero_eyebrow">Für alle, deren Muttersprache nicht Deutsch ist</p>
-      <h1 data-i18n="hero_title">Was steht wirklich in Ihrem Arbeitszeugnis?</h1>
-      <p class="lead" data-i18n="hero_lead">Deutsche Arbeitszeugnisse haben einen Geheimcode. „Zu unserer vollen Zufriedenheit“ klingt gut, ist aber nur eine 3. ZeugnisKlar erklärt Ihnen jede Formulierung in Ihrer Muttersprache und schreibt Ihnen einen fertigen Korrekturbrief an Ihren Arbeitgeber.</p>
+      <p class="eyebrow" data-i18n="home_eyebrow">Für alle, deren Muttersprache nicht Deutsch ist</p>
+      <h1 data-i18n="home_title">Deutsche Papiere, endlich verständlich</h1>
+      <p class="lead" data-i18n="home_lead">Arbeitszeugnis, Brief vom Jobcenter, Finanzamt oder der Ausländerbehörde: Wir erklären Ihnen in Ihrer Sprache, was drinsteht, welche Fristen gelten und was Sie jetzt tun sollten. Mit fertigem Antwortschreiben auf Deutsch.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#pruefen" data-i18n="hero_cta">Zeugnis jetzt prüfen</a>
-        <a class="btn btn-ghost" href="#beispiel" data-i18n="hero_cta2">Beispiel ansehen</a>
+        <a class="btn btn-primary" href="#tools" data-i18n="home_cta">Tool wählen</a>
       </div>
       <ul class="ticks">
         <li data-i18n="tick1">Ergebnis in ca. 1 Minute</li>
@@ -59,145 +56,84 @@
     <div class="hero-card" aria-hidden="true">
       <div class="hc-quote">„… stets zu unserer <mark>vollen</mark> Zufriedenheit …“</div>
       <div class="hc-row"><span class="grade g2">2</span><span data-i18n="hc_good">Gut</span></div>
-      <div class="hc-quote">„… gegenüber <mark>Kollegen und Vorgesetzten</mark> …“</div>
-      <div class="hc-row"><span class="grade gw">!</span><span data-i18n="hc_flag">Reihenfolge ist ein Warnsignal</span></div>
+      <div class="hc-quote">„… reichen Sie die Unterlagen <mark>bis zum 05.12.</mark> ein …“</div>
+      <div class="hc-row"><span class="grade g5">!</span><span data-i18n="bp_tick1">Alle Fristen auf einen Blick</span></div>
       <div class="hc-langs">Bosanski · Türkçe · العربية · Shqip · Polski · Română · Українська · English …</div>
     </div>
   </div>
 </section>
 
-<section id="so-gehts" class="section">
+<section id="tools" class="section alt">
   <div class="wrap">
-    <h2 data-i18n="how_title">So funktioniert's</h2>
-    <div class="steps">
-      <div class="step"><span class="num">1</span><h3 data-i18n="how1_t">Code kaufen</h3><p data-i18n="how1_p">Sie bezahlen sicher per Karte, Apple Pay oder Google Pay und bekommen sofort einen Prüf-Code per E-Mail.</p></div>
-      <div class="step"><span class="num">2</span><h3 data-i18n="how2_t">Zeugnis hochladen</h3><p data-i18n="how2_p">Foto, PDF oder Text einfügen. Sprache wählen. Fertig.</p></div>
-      <div class="step"><span class="num">3</span><h3 data-i18n="how3_t">Ergebnis lesen</h3><p data-i18n="how3_p">Sie sehen die Note, jede wichtige Formulierung erklärt, Warnsignale und einen fertigen Brief auf Deutsch, falls etwas korrigiert werden sollte.</p></div>
+    <h2 data-i18n="home_tools">Unsere Tools</h2>
+    <div class="tools">
+      <a class="card tool" href="/zeugnis/">
+        <span class="ico">📄</span>
+        <h3 data-i18n="tool_z_t">Arbeitszeugnis-Check</h3>
+        <p data-i18n="tool_z_p">Geheimcode entschlüsselt, Note erkannt, Korrekturbrief an den Arbeitgeber.</p>
+        <span class="meta"><span data-i18n="tool_z_price">ab 14,90 €</span><span class="btn btn-primary btn-small" data-i18n="open_tool">Öffnen</span></span>
+      </a>
+      <a class="card tool" href="/brief/">
+        <span class="ico">✉️</span>
+        <h3 data-i18n="tool_b_t">Behördenbrief-Erklärer</h3>
+        <p data-i18n="tool_b_p">Jobcenter, Finanzamt, Ausländerbehörde, Versicherung, Inkasso: Was wollen sie, bis wann, und was antworte ich?</p>
+        <span class="meta"><span data-i18n="tool_b_price">ab 4,90 €</span><span class="btn btn-primary btn-small" data-i18n="open_tool">Öffnen</span></span>
+      </a>
+      <div class="card tool soon">
+        <span class="ico">💼</span>
+        <h3 data-i18n="tool_a_t">Bewerbungspaket</h3>
+        <p data-i18n="tool_a_p">Lebenslauf und Anschreiben auf Deutsch, passend zur Stellenanzeige.</p>
+        <span class="meta"><span class="pill" data-i18n="soon">Bald</span></span>
+      </div>
+      <div class="card tool soon">
+        <span class="ico">✍️</span>
+        <h3 data-i18n="tool_w_t">Deutsch-Schreibtrainer B1/B2</h3>
+        <p data-i18n="tool_w_p">Briefe und E-Mails üben, mit Korrektur und Erklärung in Ihrer Sprache.</p>
+        <span class="meta"><span class="pill" data-i18n="soon">Bald</span></span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="beispiel" class="section alt">
+<section class="section">
   <div class="wrap">
-    <h2 data-i18n="sample_title">Beispiel-Ergebnis</h2>
-    <p class="muted" data-i18n="sample_note">So sieht ein Ergebnis aus (erfundene Person). Die Erklärung kommt in Ihrer Sprache, der Korrekturbrief immer auf Deutsch.</p>
-    <div id="sampleReport" class="report"></div>
-  </div>
-</section>
-
-<section id="pruefen" class="section">
-  <div class="wrap narrow">
-    <h2 data-i18n="check_title">Zeugnis prüfen</h2>
-    <form id="checkForm" class="card form" novalidate>
-      <label class="field">
-        <span data-i18n="f_key">Ihr Prüf-Code</span>
-        <input id="licenseKey" type="text" autocomplete="off" spellcheck="false" placeholder="XXXX-XXXX-XXXX-XXXX">
-        <small id="keyStatus" class="hint"><span data-i18n="f_key_hint">Noch keinen Code?</span> <a href="#preise" data-i18n="f_key_buy">Hier kaufen</a></small>
-      </label>
-
-      <label class="field">
-        <span data-i18n="f_lang">Erklärung in welcher Sprache?</span>
-        <select id="reportLang">
-          <option value="bs">Bosanski / Hrvatski / Srpski</option>
-          <option value="tr">Türkçe</option>
-          <option value="ar">العربية</option>
-          <option value="sq">Shqip</option>
-          <option value="pl">Polski</option>
-          <option value="ro">Română</option>
-          <option value="uk">Українська</option>
-          <option value="ru">Русский</option>
-          <option value="fa">فارسی</option>
-          <option value="bg">Български</option>
-          <option value="el">Ελληνικά</option>
-          <option value="es">Español</option>
-          <option value="it">Italiano</option>
-          <option value="en">English</option>
-          <option value="de">Deutsch (einfache Sprache)</option>
-        </select>
-      </label>
-
-      <div class="tabs" role="tablist">
-        <button type="button" class="tab active" data-tab="file" data-i18n="f_tab_file">Foto / PDF</button>
-        <button type="button" class="tab" data-tab="text" data-i18n="f_tab_text">Text einfügen</button>
-      </div>
-      <div class="tabpane" data-pane="file">
-        <label class="drop" id="drop">
-          <input id="fileInput" type="file" accept="application/pdf,image/jpeg,image/png,image/webp">
-          <span id="dropLabel" data-i18n="f_drop">Datei auswählen oder Foto machen (PDF, JPG, PNG, max. 8 MB)</span>
-        </label>
-      </div>
-      <div class="tabpane hidden" data-pane="text">
-        <textarea id="zeugnisText" rows="10" data-i18n-ph="f_text_ph" placeholder="Fügen Sie hier den Text Ihres Arbeitszeugnisses ein …"></textarea>
-      </div>
-
-      <label class="check">
-        <input id="consent" type="checkbox">
-        <span data-i18n-html="f_consent">Ich habe den <a href="/legal/datenschutz" target="_blank">Datenschutzhinweis</a> gelesen. Mir ist klar, dass ZeugnisKlar keine Rechtsberatung ist.</span>
-      </label>
-      <p class="hint" data-i18n="f_privacy">Tipp: Sie können Ihren Namen und Ihr Geburtsdatum vorher schwärzen. Das Ergebnis wird dadurch nicht schlechter.</p>
-
-      <button id="submitBtn" class="btn btn-primary btn-block" type="submit" data-i18n="f_submit">Jetzt prüfen</button>
-      <p id="formError" class="error hidden" role="alert"></p>
-    </form>
-
-    <div id="loading" class="card loading hidden">
-      <div class="spinner"></div>
-      <p data-i18n="loading">Ihr Zeugnis wird gelesen und erklärt. Das dauert meist 30 bis 90 Sekunden. Bitte Seite nicht schließen.</p>
+    <h2 data-i18n="home_why">Warum PapierKlar?</h2>
+    <div class="why">
+      <div class="step"><h3 data-i18n="why1">15 Sprachen</h3><p data-i18n="why1p">Bosnisch, Türkisch, Arabisch, Ukrainisch und mehr.</p></div>
+      <div class="step"><h3 data-i18n="why2">Fertige Antwort auf Deutsch</h3><p data-i18n="why2p">Höflich, korrekt, nur noch kopieren.</p></div>
+      <div class="step"><h3 data-i18n="why3">Keine Speicherung</h3><p data-i18n="why3p">Ihre Dokumente werden nicht gespeichert.</p></div>
     </div>
-    <div id="result" class="report hidden"></div>
   </div>
 </section>
 
-<section id="preise" class="section alt">
-  <div class="wrap">
-    <h2 data-i18n="price_title">Preise</h2>
-    <p class="muted" data-i18n="price_sub">Einmal zahlen, kein Abo. Zum Vergleich: Prüfdienste kosten 17 bis 90 €, eine Anwaltsstunde 120 bis 160 €.</p>
-    <div class="prices">
-      <div class="price card">
-        <h3 data-i18n="p1_t">Einzel-Check</h3>
-        <div class="amount">14,90 €</div>
-        <ul>
-          <li data-i18n="p_l1">1 Arbeitszeugnis</li>
-          <li data-i18n="p_l2">Erklärung in Ihrer Sprache</li>
-          <li data-i18n="p_l3">Korrekturbrief auf Deutsch</li>
-          <li data-i18n="p_l4">Ergebnis als PDF speichern</li>
-        </ul>
-        <a class="btn btn-primary btn-block checkout" data-plan="single" href="#" data-i18n="p_buy">Kaufen</a>
-      </div>
-      <div class="price card featured">
-        <span class="badge" data-i18n="p2_badge">Für Familie & Freunde</span>
-        <h3 data-i18n="p2_t">3er-Paket</h3>
-        <div class="amount">29,90 €</div>
-        <ul>
-          <li data-i18n="p2_l1">3 Arbeitszeugnisse</li>
-          <li data-i18n="p_l2">Erklärung in Ihrer Sprache</li>
-          <li data-i18n="p_l3">Korrekturbrief auf Deutsch</li>
-          <li data-i18n="p2_l4">Auch für Zwischenzeugnisse</li>
-        </ul>
-        <a class="btn btn-primary btn-block checkout" data-plan="family" href="#" data-i18n="p_buy">Kaufen</a>
-      </div>
+<section id="experte" class="section alt">
+  <div class="wrap expert">
+    <div>
+      <h2 data-i18n="ex_section_t">Lieber von einem Menschen geprüft?</h2>
+      <p class="lead" data-i18n="ex_section_p">Bei der Experten-Prüfung liest eine Deutsch-Expertin (C2) Ihr Dokument und die Analyse persönlich und überarbeitet Ihr Schreiben. Sprachliche Prüfung, keine Rechtsberatung.</p>
     </div>
-    <p class="hint center" data-i18n="price_hint">Zahlung über Polar (Merchant of Record), inkl. MwSt. Kein Ergebnis wegen technischem Fehler? Ihr Code wird dann nicht verbraucht.</p>
-  </div>
-</section>
-
-<section id="faq" class="section">
-  <div class="wrap narrow">
-    <h2>FAQ</h2>
-    <details><summary data-i18n="q1">Was bedeutet „zu unserer vollen Zufriedenheit“?</summary><p data-i18n="a1">Ohne das Wort „stets“ ist das meist eine Note 3 (befriedigend). „Stets zu unserer vollen Zufriedenheit“ ist eine 2, „stets zu unserer vollsten Zufriedenheit“ eine 1.</p></details>
-    <details><summary data-i18n="q2">Werden meine Daten gespeichert?</summary><p data-i18n="a2">Nein. Ihr Zeugnis wird nur für die Analyse verarbeitet und danach nicht gespeichert. Wir legen kein Kundenkonto an.</p></details>
-    <details><summary data-i18n="q3">Ist das eine Rechtsberatung?</summary><p data-i18n="a3">Nein. ZeugnisKlar erklärt allgemein übliche Formulierungen. Bei Streit oder Fristen helfen Gewerkschaft, Migrationsberatung oder ein Fachanwalt für Arbeitsrecht.</p></details>
-    <details><summary data-i18n="q4">Funktioniert es auch mit österreichischen und Schweizer Zeugnissen?</summary><p data-i18n="a4">Ja. Die Zeugnissprache ist sehr ähnlich. Die Analyse erkennt das Land und weist auf Unterschiede hin.</p></details>
-    <details><summary data-i18n="q5">Wie genau ist die Analyse?</summary><p data-i18n="a5">Die Analyse nutzt künstliche Intelligenz und die bekannten Regeln der Zeugnissprache. Sie ist sehr hilfreich, kann aber Fehler machen. Prüfen Sie wichtige Punkte im Zweifel mit einer Beratungsstelle.</p></details>
-    <details><summary data-i18n="q6">Ich habe bezahlt, aber keinen Code bekommen.</summary><p data-i18n="a6">Schauen Sie im Spam-Ordner nach. Der Code steht auch auf der Bestellbestätigung von Polar. Sonst schreiben Sie uns an die E-Mail im Impressum.</p></details>
+    <div class="card price">
+      <span class="badge" data-i18n="ex_badge">Persönlich geprüft</span>
+      <h3 data-i18n="ex_t">Experten-Prüfung</h3>
+      <ul>
+        <li data-i18n="ex_l1">KI-Analyse + persönliche Prüfung</li>
+        <li data-i18n="ex_l3">Fertig überarbeiteter Brief</li>
+        <li data-i18n="ex_l4">Antwort per E-Mail in 2 Werktagen</li>
+      </ul>
+      <a class="btn btn-primary btn-block checkout" data-plan="expert_brief" href="#"><span data-i18n="tool_b_t">Behördenbrief-Erklärer</span>&nbsp;· 29 €</a>
+      <a class="btn btn-ghost btn-block checkout" data-plan="expert_zeugnis" href="#"><span data-i18n="tool_z_t">Arbeitszeugnis-Check</span>&nbsp;· 39 €</a>
+      <p class="hint" data-i18n-html="ex_how">Nach dem Kauf schicken Sie Ihr Dokument an <a class="js-contact" href="#">unsere E-Mail</a>. Sprachliche Prüfung, keine Rechtsberatung.</p>
+    </div>
   </div>
 </section>
 </main>
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <div><strong>ZeugnisKlar</strong><br><span class="muted" data-i18n="foot_disc">Keine Rechtsberatung. Allgemeine Erklärung von Zeugnisformulierungen mit Hilfe von KI.</span></div>
+    <div><strong>PapierKlar</strong><br><span class="muted" data-i18n="home_foot">Keine Rechtsberatung. Allgemeine Erklärung deutscher Dokumente mit Hilfe von KI.</span></div>
     <nav>
+      <a href="/zeugnis/" data-i18n="nav_zeugnis">Arbeitszeugnis</a>
+      <a href="/brief/" data-i18n="nav_brief">Behördenbrief</a>
       <a href="/ratgeber/">Ratgeber</a>
       <a href="/legal/impressum">Impressum</a>
       <a href="/legal/datenschutz">Datenschutz</a>
@@ -207,6 +143,7 @@
 </footer>
 
 <script src="/i18n.js"></script>
+<script src="/i18n-tools.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

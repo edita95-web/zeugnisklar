@@ -9,6 +9,17 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { SYSTEM_PROMPT, OUTPUT_SCHEMA, LANGUAGES } from "./prompt.js";
 import { MOCK_REPORT } from "./mock.js";
+import { BRIEF_SYSTEM_PROMPT, BRIEF_SCHEMA, MOCK_BRIEF } from "./prompt_brief.js";
+
+// Each tool has its own prompt, result format and license-key prefix.
+// Keys for the Behördenbrief tool start with "BB"; all other keys belong to the Zeugnis tool.
+const TOOLS = {
+  zeugnis: { system: SYSTEM_PROMPT, schema: OUTPUT_SCHEMA, mock: MOCK_REPORT, validKey: (k) => !/^BB/i.test(k), ok: (r) => r.is_arbeitszeugnis },
+  brief: { system: BRIEF_SYSTEM_PROMPT, schema: BRIEF_SCHEMA, mock: MOCK_BRIEF, validKey: (k) => /^BB/i.test(k), ok: (r) => r.is_official_letter },
+};
+function toolOf(body) {
+  return TOOLS[body && body.tool] ? body.tool : "zeugnis";
+}
 
 const MAX_FILE_BYTES = 8 * 1024 * 1024; // 8 MB after base64 decode
 const MAX_TEXT_CHARS = 30000;
@@ -25,8 +36,15 @@ export default {
     }
     if (url.pathname === "/api/config") {
       return json({
-        checkoutSingle: env.CHECKOUT_URL_SINGLE || "",
-        checkoutFamily: env.CHECKOUT_URL_FAMILY || "",
+        checkout: {
+          single: env.CHECKOUT_URL_SINGLE || "",
+          family: env.CHECKOUT_URL_FAMILY || "",
+          brief_single: env.CHECKOUT_URL_BRIEF_SINGLE || "",
+          brief_pack: env.CHECKOUT_URL_BRIEF_PACK || "",
+          expert_zeugnis: env.CHECKOUT_URL_EXPERT_ZEUGNIS || "",
+          expert_brief: env.CHECKOUT_URL_EXPERT_BRIEF || "",
+        },
+        contactEmail: env.CONTACT_EMAIL || "",
         paymentsEnabled: paymentsEnabled(env),
       });
     }
@@ -72,9 +90,10 @@ async function polarValidate(env, key, incrementUsage) {
   return { ok: true, remaining };
 }
 
-async function checkLicense(env, key) {
+async function checkLicense(env, key, tool) {
   if (!paymentsEnabled(env)) return { ok: true, remaining: null };
   if (!key || typeof key !== "string" || key.length > 200) return { ok: false, reason: "invalid" };
+  if (!TOOLS[tool].validKey(key.trim())) return { ok: false, reason: "wrong_tool" };
   if (!env.POLAR_ORGANIZATION_ID) return { ok: false, reason: "not_configured" };
   const r = await polarValidate(env, key.trim(), 0);
   if (r.ok && r.remaining === 0) return { ok: false, reason: "used_up" };
@@ -88,7 +107,7 @@ async function handleCheckKey(request, env) {
   } catch {
     return json({ ok: false, reason: "bad_request" }, 400);
   }
-  return json(await checkLicense(env, body.key));
+  return json(await checkLicense(env, body.key, toolOf(body)));
 }
 
 // ---------- analysis ----------
@@ -101,6 +120,7 @@ async function handleAnalyze(request, env, ctx) {
     return json({ error: "bad_request" }, 400);
   }
 
+  const tool = toolOf(body);
   const lang = LANGUAGES[body.lang] ? body.lang : "de";
   const text = typeof body.text === "string" ? body.text.trim() : "";
   const file = body.file && typeof body.file === "object" ? body.file : null;
@@ -114,7 +134,7 @@ async function handleAnalyze(request, env, ctx) {
     if (file.data.length * 0.75 > MAX_FILE_BYTES) return json({ error: "file_size" }, 400);
   }
 
-  const license = await checkLicense(env, body.key);
+  const license = await checkLicense(env, body.key, tool);
   if (!license.ok) return json({ error: "license", reason: license.reason }, 402);
 
   // The analysis can take a minute. We stream whitespace every few seconds so no
@@ -127,8 +147,8 @@ async function handleAnalyze(request, env, ctx) {
   const work = (async () => {
     let payload;
     try {
-      const report = env.MOCK_AI === "true" ? MOCK_REPORT : await runClaude(env, { lang, text, file });
-      if (paymentsEnabled(env) && report.is_arbeitszeugnis) {
+      const report = env.MOCK_AI === "true" ? TOOLS[tool].mock : await runClaude(env, { tool, lang, text, file });
+      if (paymentsEnabled(env) && TOOLS[tool].ok(report)) {
         // Use up one check only after a successful analysis.
         await polarValidate(env, body.key.trim(), 1).catch(() => {});
       }
@@ -151,7 +171,7 @@ async function handleAnalyze(request, env, ctx) {
   });
 }
 
-async function runClaude(env, { lang, text, file }) {
+async function runClaude(env, { tool, lang, text, file }) {
   const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
 
   const content = [];
@@ -165,19 +185,21 @@ async function runClaude(env, { lang, text, file }) {
       content.push({ type: "image", source: { type: "base64", media_type: file.type, data: file.data } });
     }
   }
-  const zeugnisText = text ? `\n\n<arbeitszeugnis>\n${text}\n</arbeitszeugnis>` : "";
+  const tag = tool === "brief" ? "brief" : "arbeitszeugnis";
+  const what = tool === "brief" ? "diesen Brief" : "dieses Arbeitszeugnis";
+  const docText = text ? `\n\n<${tag}>\n${text}\n</${tag}>` : "";
   content.push({
     type: "text",
-    text: `ZIELSPRACHE: ${LANGUAGES[lang]}\n\nBitte analysiere dieses Arbeitszeugnis.${zeugnisText}`,
+    text: `ZIELSPRACHE: ${LANGUAGES[lang]}\nHEUTE: ${new Date().toISOString().slice(0, 10)}\n\nBitte analysiere ${what}.${docText}`,
   });
 
   const params = {
     model: env.ANTHROPIC_MODEL || "claude-opus-5-5",
     max_tokens: 32000,
-    system: SYSTEM_PROMPT,
+    system: TOOLS[tool].system,
     output_config: {
       effort: env.ANTHROPIC_EFFORT || "medium",
-      format: { type: "json_schema", schema: OUTPUT_SCHEMA },
+      format: { type: "json_schema", schema: TOOLS[tool].schema },
     },
     messages: [{ role: "user", content }],
   };

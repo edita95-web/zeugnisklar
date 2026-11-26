@@ -8,6 +8,9 @@
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
   var uiLang = "de";
+  // Which tool this page is: "zeugnis", "brief" or "home" (set on <body data-tool>).
+  var TOOL = document.body.getAttribute("data-tool") || "zeugnis";
+  var KEY_STORE = TOOL === "brief" ? "zk_key_brief" : "zk_key";
 
   function t(key, lang) {
     lang = lang || uiLang;
@@ -47,9 +50,10 @@
       var k = el.getAttribute("data-i18n-ph");
       el.placeholder = lang === "de" ? el.getAttribute("data-orig-ph") : (D[lang] && D[lang][k]) || el.getAttribute("data-orig-ph");
     });
+    fillContact();
     $("#uiLang").value = lang;
     store.set("zk_ui", lang);
-    if (!store.get("zk_report_lang")) {
+    if ($("#reportLang") && !store.get("zk_report_lang")) {
       $("#reportLang").value = lang === "de" ? "bs" : lang;
     }
     renderSample();
@@ -59,6 +63,62 @@
   function gradeClass(g) { return /^[1-5]$/.test(g) ? "g" + g : ""; }
 
   function renderReport(r, lang) {
+    return TOOL === "brief" ? renderBrief(r, lang) : renderZeugnis(r, lang);
+  }
+
+  function list(items) {
+    var h = "<ul>";
+    (items || []).forEach(function (x) { h += "<li>" + esc(x) + "</li>"; });
+    return h + "</ul>";
+  }
+  function letterBlock(title, text, L) {
+    var h = '<div class="card r-section"><h3>✉️ ' + esc(title) + '</h3><div class="letter">' + esc(text) + "</div>";
+    h += '<div class="r-actions" style="margin-top:12px"><button type="button" class="btn btn-ghost btn-small js-copy">' + esc(t("r_copy", L)) + "</button>";
+    h += '<button type="button" class="btn btn-ghost btn-small js-print">' + esc(t("r_print", L)) + "</button></div></div>";
+    return h;
+  }
+
+  function renderBrief(r, lang) {
+    var L = D[lang] ? lang : uiLang;
+    if (!r.is_official_letter) {
+      return '<div class="card"><h3>' + esc(t("b_notletter", L)) + "</h3><p>" + esc(r.summary) + "</p></div>";
+    }
+    var urg = { hoch: "g5", mittel: "g3", niedrig: "g2" }[r.urgency] || "";
+    var icon = r.urgency === "hoch" ? "!" : r.urgency === "mittel" ? "•" : "✓";
+    var h = '<div class="card r-head"><span class="grade big ' + urg + '">' + icon + "</span>";
+    h += "<div><div class='muted'>" + esc(r.sender_name) + (r.letter_date ? " · " + esc(r.letter_date) : "") + "</div><h3>" + esc(r.topic) + "</h3>";
+    h += "<div class='r-sub'><span>" + esc(t("b_urgency", L)) + ": <b>" + esc(t("u_" + r.urgency, L)) + "</b></span></div></div></div>";
+    if (r.scam_warning) h += '<div class="card flag" style="background:var(--bad-soft)"><strong>🚨 ' + esc(t("b_scam", L)) + "</strong>" + esc(r.scam_warning) + "</div>";
+    h += '<div class="card"><p style="margin:0">' + esc(r.summary) + "</p></div>";
+    if (r.deadlines && r.deadlines.length) {
+      h += '<div class="card r-section"><h3>⏰ ' + esc(t("b_deadlines", L)) + "</h3>";
+      r.deadlines.forEach(function (d) {
+        h += '<div class="flag"><strong>' + esc(d.date) + (d.certain ? "" : " (" + esc(t("b_estimate", L)) + ")") + "</strong>" + esc(d.what) + "</div>";
+      });
+      h += "</div>";
+    }
+    h += '<div class="card r-section"><h3>' + esc(t("b_want", L)) + "</h3>" + list(r.what_they_want);
+    if (r.if_you_do_nothing) h += "<p><b>" + esc(t("b_nothing", L)) + "</b> " + esc(r.if_you_do_nothing) + "</p>";
+    h += "</div>";
+    h += '<div class="card r-section"><h3>' + esc(t("r_next", L)) + "</h3>" + list(r.what_to_do);
+    if (r.documents_needed && r.documents_needed.length) h += "<p><b>" + esc(t("b_docs", L)) + "</b></p>" + list(r.documents_needed);
+    h += "</div>";
+    if (r.key_terms && r.key_terms.length) {
+      h += '<div class="card r-section"><h3>' + esc(t("b_terms", L)) + "</h3>";
+      r.key_terms.forEach(function (k) {
+        h += '<div class="phrase"><span class="grade">i</span><q>' + esc(k.term_de) + "</q><p>" + esc(k.explanation) + "</p></div>";
+      });
+      h += "</div>";
+    }
+    if (r.reply_letter_de) h += letterBlock(t("b_reply", L), r.reply_letter_de, L);
+    if (r.where_to_get_help && r.where_to_get_help.length) {
+      h += '<div class="card r-section"><h3>' + esc(t("b_help", L)) + "</h3>" + list(r.where_to_get_help) + "</div>";
+    }
+    h += '<p class="disclaimer">' + esc(t("r_disc", L)) + "</p>";
+    return h;
+  }
+
+  function renderZeugnis(r, lang) {
     var L = D[lang] ? lang : uiLang;
     if (!r.is_arbeitszeugnis) {
       return '<div class="card"><h3>' + esc(t("r_notz", L)) + "</h3><p>" + esc(r.summary) + "</p></div>";
@@ -113,7 +173,7 @@
   function bindReportActions(container, r, lang) {
     var copy = container.querySelector(".js-copy");
     if (copy) copy.addEventListener("click", function () {
-      navigator.clipboard.writeText(r.correction_letter_de).then(function () { copy.textContent = t("r_copied", lang); });
+      navigator.clipboard.writeText(r.correction_letter_de || r.reply_letter_de).then(function () { copy.textContent = t("r_copied", lang); });
     });
     var pr = container.querySelector(".js-print");
     if (pr) pr.addEventListener("click", function () { window.print(); });
@@ -123,49 +183,63 @@
   var samples = {};
   function renderSample() {
     var lang = uiLang, el = $("#sampleReport");
+    if (!el) return;
     if (samples[lang]) {
       el.innerHTML = renderReport(samples[lang], lang);
       bindReportActions(el, samples[lang], lang);
       return;
     }
-    fetch("/sample-report." + lang + ".json").then(function (r) { return r.json(); }).then(function (j) {
+    fetch("/samples/" + TOOL + "." + lang + ".json").then(function (r) { return r.json(); }).then(function (j) {
       samples[lang] = j;
       if (uiLang === lang) renderSample();
     }).catch(function () {});
   }
 
   // ---------- config / checkout ----------
-  var config = { checkoutSingle: "", checkoutFamily: "", paymentsEnabled: true };
+  var config = { checkout: {}, paymentsEnabled: true };
   fetch("/api/config").then(function (r) { return r.json(); }).then(function (c) {
     config = c;
     $$(".checkout").forEach(function (a) {
-      var u = a.getAttribute("data-plan") === "family" ? c.checkoutFamily : c.checkoutSingle;
+      var u = (c.checkout || {})[a.getAttribute("data-plan")];
       if (u) a.href = u;
     });
-    if (!c.paymentsEnabled) $("#licenseKey").closest(".field").classList.add("hidden");
+    fillContact();
+    if (!c.paymentsEnabled && $("#licenseKey")) $("#licenseKey").closest(".field").classList.add("hidden");
   }).catch(function () {});
   $$(".checkout").forEach(function (a) {
     a.addEventListener("click", function (e) {
       if (a.getAttribute("href") === "#") { e.preventDefault(); alertMsg(t("e_soon")); }
     });
   });
-  function alertMsg(m) { showError(m); $("#pruefen").scrollIntoView(); }
+  function fillContact() {
+    $$(".js-contact").forEach(function (el) {
+      if (config.contactEmail) { el.textContent = config.contactEmail; el.href = "mailto:" + config.contactEmail; }
+    });
+  }
+  function alertMsg(m) {
+    if ($("#formError")) { showError(m); $("#pruefen").scrollIntoView(); }
+    else window.alert(m);
+  }
+
+  $("#uiLang").addEventListener("change", function () { applyLang($("#uiLang").value); });
+  applyLang(guessLang());
+  if (!$("#checkForm")) return; // portal home page has no form
 
   // ---------- license key ----------
   var keyInput = $("#licenseKey");
   var params = new URLSearchParams(location.search);
-  keyInput.value = params.get("key") || store.get("zk_key") || "";
+  keyInput.value = params.get("key") || store.get(KEY_STORE) || "";
   function checkKey() {
     var k = keyInput.value.trim();
     var st = $("#keyStatus");
     if (!k) return;
-    store.set("zk_key", k);
-    fetch("/api/check-key", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ key: k }) })
+    store.set(KEY_STORE, k);
+    fetch("/api/check-key", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ key: k, tool: TOOL }) })
       .then(function (r) { return r.json(); })
       .then(function (j) {
         st.className = "hint " + (j.ok ? "ok" : "bad");
         if (j.ok) st.textContent = j.remaining == null ? t("k_ok_unl") : t("k_ok") + " " + j.remaining;
-        else st.textContent = t(j.reason === "used_up" ? "k_used" : j.reason === "invalid" ? "k_invalid" : "k_err");
+        else st.textContent = t(j.reason === "used_up" ? "k_used" : j.reason === "invalid" ? "k_invalid" : j.reason === "wrong_tool" ? "k_wrong" : "k_err");
       }).catch(function () { st.className = "hint bad"; st.textContent = t("k_err"); });
   }
   keyInput.addEventListener("change", checkKey);
@@ -246,7 +320,7 @@
       return fetch("/api/analyze", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ key: key, lang: lang, text: text, file: f }),
+        body: JSON.stringify({ key: key, tool: TOOL, lang: lang, text: text, file: f }),
       });
     }).then(function (res) {
       return res.text().then(function (body) {
@@ -262,7 +336,7 @@
         out.scrollIntoView({ behavior: "smooth" });
         checkKey();
       } else if (j.error === "license") {
-        showError(t(j.reason === "used_up" ? "k_used" : j.reason === "invalid" ? "k_invalid" : "k_err"));
+        showError(t(j.reason === "used_up" ? "k_used" : j.reason === "invalid" ? "k_invalid" : j.reason === "wrong_tool" ? "k_wrong" : "k_err"));
       } else {
         showError(t({ file_type: "e_file", file_size: "e_file", too_long: "e_too_long", empty: "e_empty", refusal: "e_refusal" }[j.error] || "e_ai"));
       }
@@ -270,6 +344,4 @@
       .then(function () { btn.disabled = false; $("#loading").classList.add("hidden"); });
   });
 
-  $("#uiLang").addEventListener("change", function () { applyLang($("#uiLang").value); });
-  applyLang(guessLang());
 })();

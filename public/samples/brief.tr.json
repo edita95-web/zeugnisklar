@@ -1,0 +1,55 @@
+{
+ "is_official_letter": true,
+ "sender_type": "jobcenter",
+ "sender_name": "Jobcenter Musterstadt",
+ "letter_date": "20.11.2026",
+ "urgency": "hoch",
+ "scam_warning": "",
+ "reply_type": "unterlagen",
+ "reply_letter_de": "[Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\nJobcenter Musterstadt\nTeam 456\nMusterstraße 1\n12345 Musterstadt\n\n[Ort], [Datum]\n\nIhr Zeichen: [Aktenzeichen / BG-Nummer]\nIhr Schreiben vom 20.11.2026 – Nachreichung von Unterlagen\n\nSehr geehrte Damen und Herren,\n\nmit Ihrem Schreiben vom 20.11.2026 haben Sie mich gebeten, Unterlagen für meinen Weiterbewilligungsantrag einzureichen. Anbei sende ich Ihnen:\n\n1. Kontoauszüge der letzten drei Monate\n2. Lohnabrechnung für Oktober 2026\n3. Aktuelle Nebenkostenabrechnung\n\nBitte bestätigen Sie mir kurz den Eingang. Bei Rückfragen erreichen Sie mich unter [Telefonnummer].\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Vorname Nachname]",
+ "topic": "Jobcenter, devam başvurunuz (Weiterbewilligungsantrag) için belge istiyor.",
+ "summary": "Bürgergeld ödemesinin devam etmesi için başvurdunuz. Jobcenter başvuruyu ancak üç belge gönderdiğinizde işleme alabilir. Son tarih 05.12.2026. Belgeler gelmezse Jobcenter ödemeyi tamamen veya kısmen durdurabilir. Bu normal bir mektuptur, paniğe gerek yok, ama hızlı hareket etmelisiniz.",
+ "deadlines": [
+  {
+   "date": "05.12.2026",
+   "what": "Banka hesap dökümlerini, maaş bordrosunu ve yan gider hesabını Jobcenter'a gönderin.",
+   "certain": true
+  }
+ ],
+ "what_they_want": [
+  "Son üç aya ait tüm hesapların banka dökümleri",
+  "Ekim 2026 maaş bordronuz",
+  "Dairenizin güncel yan gider hesabı (Nebenkostenabrechnung)"
+ ],
+ "if_you_do_nothing": "Jobcenter, işbirliği eksikliği nedeniyle Bürgergeld'i tamamen veya kısmen reddedebilir (§ 66 SGB I). Bu durumda Aralık'tan itibaren hiç ya da daha az para alabilirsiniz.",
+ "what_to_do": [
+  "Belgelerin fotokopisini alın, asıllarını saklayın.",
+  "Belgeleri aşağıdaki cevap mektubuyla gönderin veya jobcenter.digital üzerinden yükleyin.",
+  "05.12.'ye kadar bir belgeniz yoksa: süre bitmeden yazılı olarak ek süre isteyin.",
+  "Teslim belgesini saklayın veya posta kutusuna atarken fotoğraf çekin."
+ ],
+ "documents_needed": [
+  "Banka dökümleri (3 ay, tüm hesaplar)",
+  "Ekim 2026 maaş bordrosu",
+  "Yan gider hesabı (Nebenkostenabrechnung)"
+ ],
+ "key_terms": [
+  {
+   "term_de": "Weiterbewilligungsantrag",
+   "explanation": "Onay süresi bitince Bürgergeld'in ödenmeye devam etmesi için yapılan başvuru."
+  },
+  {
+   "term_de": "Mitwirkungspflicht (§ 60 SGB I)",
+   "explanation": "Dairenin karar için ihtiyaç duyduğu belgeleri verme yükümlülüğü."
+  },
+  {
+   "term_de": "Versagung",
+   "explanation": "Belgeler eksik olduğu için daire ödeme yapmaz. Belgeleri gönderirseniz ödeme yeniden başlayabilir."
+  }
+ ],
+ "where_to_get_help": [
+  "Yetişkinler için göçmen danışmanlığı (MBE), ücretsiz",
+  "Caritas, Diakonie veya AWO sosyal danışmanlığı",
+  "Jobcenter'ınızın bilgi hattı"
+ ]
+}

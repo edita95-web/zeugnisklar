@@ -16,6 +16,13 @@ POLAR_SANDBOX = "false"
 # Checkout links from Polar -> Products -> (product) -> Share / Checkout link
 CHECKOUT_URL_SINGLE = "https://buy.polar.sh/polar_cl_Y5Y48DKRDxrWf5yZNTrT767J07XqYlfXmpVUx2asVGN"
 CHECKOUT_URL_FAMILY = "https://buy.polar.sh/polar_cl_uQ9zxx2hkd1DJvlpj989NruJTgtQ9RcqxTJM92Jte5q"
+# Behördenbrief tool (license key prefix BB) and expert review products
+CHECKOUT_URL_BRIEF_SINGLE = ""
+CHECKOUT_URL_BRIEF_PACK = ""
+CHECKOUT_URL_EXPERT_ZEUGNIS = ""
+CHECKOUT_URL_EXPERT_BRIEF = ""
+# E-mail where customers of the expert review send their document
+CONTACT_EMAIL = ""
 # "off" disables the license check (only for testing!)
 PAYMENTS = "polar"
 # Claude model and effort. Defaults are fine.

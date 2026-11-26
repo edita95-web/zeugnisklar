@@ -1,0 +1,55 @@
+{
+ "is_official_letter": true,
+ "sender_type": "jobcenter",
+ "sender_name": "Jobcenter Musterstadt",
+ "letter_date": "20.11.2026",
+ "urgency": "hoch",
+ "scam_warning": "",
+ "reply_type": "unterlagen",
+ "reply_letter_de": "[Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\nJobcenter Musterstadt\nTeam 456\nMusterstraße 1\n12345 Musterstadt\n\n[Ort], [Datum]\n\nIhr Zeichen: [Aktenzeichen / BG-Nummer]\nIhr Schreiben vom 20.11.2026 – Nachreichung von Unterlagen\n\nSehr geehrte Damen und Herren,\n\nmit Ihrem Schreiben vom 20.11.2026 haben Sie mich gebeten, Unterlagen für meinen Weiterbewilligungsantrag einzureichen. Anbei sende ich Ihnen:\n\n1. Kontoauszüge der letzten drei Monate\n2. Lohnabrechnung für Oktober 2026\n3. Aktuelle Nebenkostenabrechnung\n\nBitte bestätigen Sie mir kurz den Eingang. Bei Rückfragen erreichen Sie mich unter [Telefonnummer].\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Vorname Nachname]",
+ "topic": "يطلب منك الجوب سنتر (Jobcenter) مستندات لطلب تمديد المساعدة (Weiterbewilligungsantrag).",
+ "summary": "قدّمت طلبًا لمواصلة صرف Bürgergeld. لا يستطيع الجوب سنتر معالجة الطلب إلا بعد أن ترسل ثلاثة مستندات. الموعد النهائي هو 05.12.2026. إذا لم تصل المستندات، يمكن للجوب سنتر إيقاف الدفع كليًا أو جزئيًا. هذه رسالة عادية ولا داعي للذعر، لكن عليك التصرف بسرعة.",
+ "deadlines": [
+  {
+   "date": "05.12.2026",
+   "what": "إرسال كشوف الحساب البنكي وكشف الراتب وفاتورة التكاليف الإضافية إلى الجوب سنتر.",
+   "certain": true
+  }
+ ],
+ "what_they_want": [
+  "كشوف جميع الحسابات البنكية لآخر ثلاثة أشهر",
+  "كشف راتبك لشهر أكتوبر 2026",
+  "فاتورة التكاليف الإضافية الحالية لشقتك (Nebenkostenabrechnung)"
+ ],
+ "if_you_do_nothing": "يحق للجوب سنتر رفض Bürgergeld كليًا أو جزئيًا بسبب عدم التعاون (§ 66 SGB I). عندها قد لا تحصل على أي مال أو تحصل على مبلغ أقل ابتداءً من ديسمبر.",
+ "what_to_do": [
+  "انسخ المستندات واحتفظ بالأصول.",
+  "أرسلها مع رسالة الرد أدناه أو ارفعها عبر jobcenter.digital.",
+  "إذا لم يكن لديك مستند حتى 05.12: اطلب كتابيًا مهلة إضافية قبل انتهاء الموعد.",
+  "احتفظ بإثبات الاستلام أو التقط صورة عند وضع الرسالة في صندوق البريد."
+ ],
+ "documents_needed": [
+  "كشوف الحساب (3 أشهر، جميع الحسابات)",
+  "كشف راتب أكتوبر 2026",
+  "فاتورة التكاليف الإضافية (Nebenkostenabrechnung)"
+ ],
+ "key_terms": [
+  {
+   "term_de": "Weiterbewilligungsantrag",
+   "explanation": "طلب لمواصلة صرف Bürgergeld بعد انتهاء فترة الموافقة."
+  },
+  {
+   "term_de": "Mitwirkungspflicht (§ 60 SGB I)",
+   "explanation": "واجب تقديم المستندات التي تحتاجها الجهة لاتخاذ القرار."
+  },
+  {
+   "term_de": "Versagung",
+   "explanation": "لا تدفع الجهة لأن المستندات ناقصة. إذا أرسلتها يمكن استئناف الدفع."
+  }
+ ],
+ "where_to_get_help": [
+  "استشارات الهجرة للبالغين (MBE)، مجانًا",
+  "الاستشارات الاجتماعية لدى كاريتاس أو دياكوني أو AWO",
+  "الخط الإعلامي للجوب سنتر الخاص بك"
+ ]
+}

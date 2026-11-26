@@ -1,0 +1,55 @@
+{
+ "is_official_letter": true,
+ "sender_type": "jobcenter",
+ "sender_name": "Jobcenter Musterstadt",
+ "letter_date": "20.11.2026",
+ "urgency": "hoch",
+ "scam_warning": "",
+ "reply_type": "unterlagen",
+ "reply_letter_de": "[Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\nJobcenter Musterstadt\nTeam 456\nMusterstraße 1\n12345 Musterstadt\n\n[Ort], [Datum]\n\nIhr Zeichen: [Aktenzeichen / BG-Nummer]\nIhr Schreiben vom 20.11.2026 – Nachreichung von Unterlagen\n\nSehr geehrte Damen und Herren,\n\nmit Ihrem Schreiben vom 20.11.2026 haben Sie mich gebeten, Unterlagen für meinen Weiterbewilligungsantrag einzureichen. Anbei sende ich Ihnen:\n\n1. Kontoauszüge der letzten drei Monate\n2. Lohnabrechnung für Oktober 2026\n3. Aktuelle Nebenkostenabrechnung\n\nBitte bestätigen Sie mir kurz den Eingang. Bei Rückfragen erreichen Sie mich unter [Telefonnummer].\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Vorname Nachname]",
+ "topic": "The Jobcenter needs documents for your application to continue benefits (Weiterbewilligungsantrag).",
+ "summary": "You applied for your Bürgergeld to continue. The Jobcenter can only process the application once you send three documents. The deadline is 05.12.2026. If the documents are missing, the Jobcenter may stop the payment fully or partly. This is a routine letter and no reason to panic, but you should act quickly.",
+ "deadlines": [
+  {
+   "date": "05.12.2026",
+   "what": "Send bank statements, payslip and service-charge statement to the Jobcenter.",
+   "certain": true
+  }
+ ],
+ "what_they_want": [
+  "Statements for all bank accounts for the last three months",
+  "Your payslip for October 2026",
+  "The current service-charge statement for your flat (Nebenkostenabrechnung)"
+ ],
+ "if_you_do_nothing": "The Jobcenter may refuse Bürgergeld fully or partly for lack of cooperation (§ 66 SGB I). You might then get no money or less money from December.",
+ "what_to_do": [
+  "Copy the documents and keep the originals.",
+  "Send them with the reply letter below or upload them at jobcenter.digital.",
+  "If you can't get something by 05.12: ask in writing for more time before the deadline.",
+  "Keep the receipt or take a photo when you post the letter."
+ ],
+ "documents_needed": [
+  "Bank statements (3 months, all accounts)",
+  "Payslip October 2026",
+  "Service-charge statement (Nebenkostenabrechnung)"
+ ],
+ "key_terms": [
+  {
+   "term_de": "Weiterbewilligungsantrag",
+   "explanation": "Application for Bürgergeld to continue after the approval period ends."
+  },
+  {
+   "term_de": "Mitwirkungspflicht (§ 60 SGB I)",
+   "explanation": "Your duty to give the office the documents it needs to decide."
+  },
+  {
+   "term_de": "Versagung",
+   "explanation": "The office does not pay because documents are missing. Once you send them, payment can resume."
+  }
+ ],
+ "where_to_get_help": [
+  "Migration advice for adults (MBE), free of charge",
+  "Social advice at Caritas, Diakonie or AWO",
+  "Your Jobcenter's info hotline"
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "is_official_letter": true,
+ "sender_type": "jobcenter",
+ "sender_name": "Jobcenter Musterstadt",
+ "letter_date": "20.11.2026",
+ "urgency": "hoch",
+ "scam_warning": "",
+ "reply_type": "unterlagen",
+ "reply_letter_de": "[Vorname Nachname]\n[Straße Hausnummer]\n[PLZ Ort]\n\nJobcenter Musterstadt\nTeam 456\nMusterstraße 1\n12345 Musterstadt\n\n[Ort], [Datum]\n\nIhr Zeichen: [Aktenzeichen / BG-Nummer]\nIhr Schreiben vom 20.11.2026 – Nachreichung von Unterlagen\n\nSehr geehrte Damen und Herren,\n\nmit Ihrem Schreiben vom 20.11.2026 haben Sie mich gebeten, Unterlagen für meinen Weiterbewilligungsantrag einzureichen. Anbei sende ich Ihnen:\n\n1. Kontoauszüge der letzten drei Monate\n2. Lohnabrechnung für Oktober 2026\n3. Aktuelle Nebenkostenabrechnung\n\nBitte bestätigen Sie mir kurz den Eingang. Bei Rückfragen erreichen Sie mich unter [Telefonnummer].\n\nMit freundlichen Grüßen\n\n[Unterschrift]\n[Vorname Nachname]",
+ "topic": "Das Jobcenter braucht Unterlagen für Ihren Weiterbewilligungsantrag.",
+ "summary": "Sie haben beantragt, dass Ihr Bürgergeld weiter gezahlt wird. Das Jobcenter kann den Antrag erst bearbeiten, wenn Sie drei Unterlagen schicken. Die Frist ist der 05.12.2026. Wenn die Unterlagen fehlen, kann das Jobcenter die Zahlung ganz oder teilweise stoppen. Das ist ein normales Schreiben und kein Grund zur Panik, aber Sie sollten schnell reagieren.",
+ "deadlines": [
+  {
+   "date": "05.12.2026",
+   "what": "Kontoauszüge, Lohnabrechnung und Nebenkostenabrechnung beim Jobcenter einreichen.",
+   "certain": true
+  }
+ ],
+ "what_they_want": [
+  "Kontoauszüge aller Konten der letzten drei Monate",
+  "Ihre Lohnabrechnung für Oktober 2026",
+  "Die aktuelle Nebenkostenabrechnung Ihrer Wohnung"
+ ],
+ "if_you_do_nothing": "Das Jobcenter darf das Bürgergeld wegen fehlender Mitwirkung ganz oder teilweise versagen (§ 66 SGB I). Dann bekommen Sie ab Dezember eventuell kein oder weniger Geld.",
+ "what_to_do": [
+  "Unterlagen kopieren, Originale behalten.",
+  "Unterlagen mit dem Antwortschreiben unten schicken oder online über jobcenter.digital hochladen.",
+  "Wenn Sie etwas bis zum 05.12. nicht haben: vorher schriftlich um mehr Zeit bitten.",
+  "Eingangsbestätigung aufheben oder Foto vom Einwurf machen."
+ ],
+ "documents_needed": [
+  "Kontoauszüge (3 Monate, alle Konten)",
+  "Lohnabrechnung Oktober 2026",
+  "Nebenkostenabrechnung"
+ ],
+ "key_terms": [
+  {
+   "term_de": "Weiterbewilligungsantrag",
+   "explanation": "Antrag, damit das Bürgergeld nach Ende des Zeitraums weiter gezahlt wird."
+  },
+  {
+   "term_de": "Mitwirkungspflicht (§ 60 SGB I)",
+   "explanation": "Sie müssen dem Amt die Unterlagen geben, die es für die Entscheidung braucht."
+  },
+  {
+   "term_de": "Versagung",
+   "explanation": "Das Amt zahlt nicht, weil Unterlagen fehlen. Wenn Sie sie nachreichen, kann die Zahlung wieder aufgenommen werden."
+  }
+ ],
+ "where_to_get_help": [
+  "Migrationsberatung für Erwachsene (MBE), kostenlos",
+  "Sozialberatung von Caritas, Diakonie oder AWO",
+  "Die Info-Hotline Ihres Jobcenters"
+ ]
+}
