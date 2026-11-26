@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zeugnisklar.com/sitemap.xml

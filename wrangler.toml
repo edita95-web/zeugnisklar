@@ -1,0 +1,30 @@
+name = "zeugnisklar"
+main = "src/worker.js"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[vars]
+# Polar: organization ID from Polar -> Settings -> General (not secret)
+POLAR_ORGANIZATION_ID = ""
+# "true" while testing with sandbox.polar.sh, "false" for real sales
+POLAR_SANDBOX = "false"
+# Checkout links from Polar -> Products -> (product) -> Share / Checkout link
+CHECKOUT_URL_SINGLE = ""
+CHECKOUT_URL_FAMILY = ""
+# "off" disables the license check (only for testing!)
+PAYMENTS = "polar"
+# Claude model and effort. Defaults are fine.
+ANTHROPIC_MODEL = "claude-opus-5-5"
+ANTHROPIC_EFFORT = "medium"
+# "off" turns off the automatic fallback model (only if the first real test fails)
+FALLBACKS = "default"
+# "true" returns the sample report without calling the AI (for testing)
+MOCK_AI = "false"
+
+# The API key is a secret. Set it with:  npx wrangler secret put ANTHROPIC_API_KEY
+# or in the Cloudflare dashboard: Worker -> Settings -> Variables and Secrets.
